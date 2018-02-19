@@ -1,0 +1,12 @@
+<h1>Welcome to Airbnb</h1>
+
+
+<% @listings.each do |l| %> 
+<%= l.location %> 
+$<%= l.price %> 
+<%= l.num_of_guests %> guest(s) 
+<hr>
+<% end %> 
+
+
+<%= will_paginate @listing %>

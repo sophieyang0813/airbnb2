@@ -1,0 +1,15 @@
+
+
+
+<h1>HELLOoo</h1>
+
+
+<%= form_for @listing do |l| %>
+<%= l.label :price %> 
+ <%= l.text_field :price %> 
+ <%= l.label :location %> 
+ <%= l.text_field :location %> 
+ guest 
+ <%= l.select :num_of_guests, options_for_select([1,2,3,4,5,6,7]) %> 
+  <%=  l.submit %>
+<% end %> 
