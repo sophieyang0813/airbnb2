@@ -6,6 +6,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.3.2/flatpickr.css">
       <% if flash[:notice] %>
 	    <div class="notice"><%= flash[:notice] %></div>
 	  <% end %>
@@ -14,9 +15,25 @@
 
   <body>
   	
+
+
+
+<nav class="navbar navbar-light bg-faded">
+  <a class="navbar-brand" href="#">Navbar</a>
+    <div class="collapse navbar-collapse">
+      <ul>
+        <li>
+          <a class="nav-link" href="#">Link</a>
+        </li>
+      </ul>
+    </div>
+</nav>
+
+
   	<%= link_to "Sign in with Facebook", "/auth/facebook" %>
   	<%= link_to("Sign out", sign_out_path(@user), method: :delete) %> 
     
     <%= yield %>
   </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.3.2/flatpickr.js"></script>
 </html>

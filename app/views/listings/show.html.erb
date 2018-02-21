@@ -1,0 +1,10 @@
+<h1>Your listing </h1>
+
+<%= @listing.location %> <br>
+$<%= @listing.price %> <br>
+amenities:  
+<% i = 0 %> 
+<% while i < @listing.amenities.length %> 
+	<%= @listing.amenities[i] %> 
+	<% i += 1 %>
+<% end %> 

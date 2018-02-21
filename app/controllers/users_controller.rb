@@ -16,6 +16,17 @@ class UsersController < Clearance::UsersController
 	end 
 
 
+	def index
+		@users = User.all
+		@user = current_user
+		if @user.roles == "superadmin" 
+			flash[:notice] = "only superadmin can view this page"
+		else 
+			flash[:notice] = "sorry, you do not have an access to this page."
+		end 
+		render template: "users/index"
+	end 
+
 	private
 	def user_params
 		params.require(:user).permit(:name, :email, :password)

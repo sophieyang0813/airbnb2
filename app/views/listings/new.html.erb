@@ -10,6 +10,10 @@
  <%= l.label :location %> 
  <%= l.text_field :location %> 
  guest 
- <%= l.select :num_of_guests, options_for_select([1,2,3,4,5,6,7]) %> 
+ <%= l.select :num_of_guests, options_for_select([1,2,3,4,5,6,7]) %> <br>
+ <%= l.label :amenities %>  <br>
+  gym <%= check_box :listing, :amenities, {:multiple => true}, "gym", nil %> <br>
+  pool <%= check_box :listing, :amenities, {:multiple => true}, "pool", nil %> <br>
+  sauna <%= check_box :listing, :amenities, {:multiple => true}, "sauna", nil %> <br>
   <%=  l.submit %>
 <% end %> 

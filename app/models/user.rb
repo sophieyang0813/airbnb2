@@ -1,8 +1,7 @@
 class User < ApplicationRecord
+   enum status: [ :superadmin, :moderator, :customer ]
   include Clearance::User
   has_many :authentications, dependent: :destroy
-  enum status: [:superadmin, :moderator, :customer]
-
 
    def self.create_with_auth_and_hash(authentication, auth_hash)
    user = self.create!(

@@ -1,0 +1,49 @@
+<h1>helooo</h1>
+
+
+<%= form_for ([@listing, @reservation]) do |r| %>
+<div class="container">
+    <div class="row">
+        <div class='col-sm-6'>
+            <div class="form-group">
+                <div class='input-group date'>
+                    <!-- <input type='text' class="form-control" id="datetimepicker1" /> -->
+                     <%= r.text_field :check_in, id: "datetimepicker1" %> 
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+                $(function() {
+  					$('#datetimepicker1').datepicker();
+				});
+        </script>
+    </div>
+</div>
+<% end %> 
+
+
+
+hello
+<!-- <input id="hello" class="flatpickr" data-dateFormat="l, F j, Y"> -->
+<%= form_for ([@listing, @reservation]) do |r| %>
+<%= r.text_field :check_in, id:"hello" %> 
+<% end %> 
+
+<script type="text/javascript">
+ 
+flatpickr('#hello', { dateFormat: 'd-m-Y'});
+flatpickr('#hello', { dateFormat: 'm/d/Y'});
+
+
+</script>
+
+
+
+<%= form_for ([@listing, @reservation]) do |r| %>
+	check in <%= r.text_field :check_in, id:"hello" %> 
+	check out <%= r.text_field :check_out %> 
+	<%= r.submit "submit" %> 
+<% end %> 

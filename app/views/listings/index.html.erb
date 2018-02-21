@@ -1,12 +1,30 @@
-<h1>Welcome to Airbnb</h1>
+<h1>Welcome to Airbnb 
+<%= current_user.name.capitalize if !current_user.nil? %> !</h1>
+
+<%= form_tag("/search") do %>
+<%= text_field_tag :location %>
+<%= submit_tag %>
+<% end %>   	
+<br>
 
 
-<% @listings.each do |l| %> 
-<%= l.location %> 
-$<%= l.price %> 
-<%= l.num_of_guests %> guest(s) 
-<hr>
-<% end %> 
+<div class="container">
+	<div class="row">
+		<% @listings.each do |l| %> 
+			<div class="card col-md-4" style="width: 20rem;">
+				<div class="card-block">
+				<h4 class="card-title"><%= l.location %> </h4>
+				<p class="card-text">$<%= l.price %> <br>
+				<%= l.num_of_guests %> guest(s) <br>
+				<%= l.amenities %>  </p><br>
+				 <a href=<%= new_listing_reservation_path(l) %> class="btn btn-primary">make reservation</a>
+				</div>
+			</div>
+			<br>
+		<% end %>
+			<br>
+	</div>
+</div>
 
 
-<%= will_paginate @listing %>
+
