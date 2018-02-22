@@ -29,19 +29,23 @@
 hello
 <!-- <input id="hello" class="flatpickr" data-dateFormat="l, F j, Y"> -->
 <%= form_for ([@listing, @reservation]) do |r| %>
-<%= r.text_field :check_in, id:"hello" %> 
+check in <%= r.text_field :check_in, class: "selector" %> 
+check in <%= r.text_field :check_out, class: "selector" %> 
+    <%= r.submit "submit" %> 
+<%#= r.text_field :check_out, id:"hello2" %> 
 <% end %> 
 
+
 <script type="text/javascript">
- 
-flatpickr('#hello', { dateFormat: 'd-m-Y'});
-flatpickr('#hello', { dateFormat: 'm/d/Y'});
 
 
+$(document).ready(function(){
+    $(".selector").flatpickr();
+});
 </script>
 
 
-
+ nonon
 <%= form_for ([@listing, @reservation]) do |r| %>
 	check in <%= r.text_field :check_in, id:"hello" %> 
 	check out <%= r.text_field :check_out %> 
